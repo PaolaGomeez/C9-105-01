@@ -42,4 +42,12 @@ class LoginViewModel : ViewModel() {
 
         return isEmailValid && isPasswordValid
     }
+
+    fun resetForm() {
+        _email.value = ""
+        _password.value = ""
+        _rememberSession.value = false
+        _emailError.value = false
+        _passwordError.value = false
+    }
 }

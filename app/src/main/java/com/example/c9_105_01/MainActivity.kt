@@ -4,7 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.example.c9_105_01.ui.screens.LoginScreen
+import androidx.navigation.compose.rememberNavController
+import com.example.c9_105_01.ui.navigation.SoundInNavGraph
 import com.example.c9_105_01.ui.theme.C910501Theme
 
 class MainActivity : ComponentActivity() {
@@ -13,9 +14,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             C910501Theme {
-                LoginScreen(
-                    onNavigateToRegister = { }
-                )
+                val navController = rememberNavController()
+                SoundInNavGraph(navController = navController)
             }
         }
     }
